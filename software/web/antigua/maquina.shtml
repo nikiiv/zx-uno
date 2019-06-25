@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="favicon.png"/>
+  <link rel="stylesheet" href="home.css"/>
+  <title>ZX-Uno [Clon de ordenador ZX Spectrum basado en FPGA]</title>
+</head>
+<body>
+<div id="logo" style="background:url(imagen/logo.png)"></div>
+<div id="menu">
+  <a href="index.shtml"    style="width:50px">Inicio</a>
+  <span>·</span>
+  <a href="http://zxuno.com/forum" target="_blank" style="width:40px">Foro</a>
+  <span>·</span>
+  <span                    style="width:95px">La Máquina</span>
+  <span>·</span>
+  <a href="descarga.shtml" style="width:78px">Descarga</a>
+  <span>·</span>
+  <a href="media.shtml"    style="width:52px">Media</a>
+  <span>·</span>
+  <a href="faq.shtml"      style="width:45px">FAQ</a>
+  <span>·</span>
+  <a href="contacto.shtml" style="width:75px">Contacto</a>
+  <span>·</span>
+  <a href="maquina_e.shtml"  style="width:62px">[English]</a></div>
+<div id="main">
+  <div class="section" style="border-color:#c03"><a href="#hardware">HARDWARE</a></div>
+  <div class="section" style="border-color:#084"><a href="#software">SOFTWARE</a></div>
+  <div class="section" style="border-color:#05a"><a href="#enlaces">ENLACES</a></div>
+
+  <a name="hardware"></a>
+  <div style="background-color:#c03;height:4px;margin-top:70px;width:99.5%;clear:left"></div>
+  <strong style="font-size:20px">Hardware</strong>
+  <img width="100%" src="imagen/esquema.png"/>
+  <strong>Especificaciones técnicas:</strong>
+  <ul>
+    <li>FPGA Xilinx Spartan XC6SLX9-2TQG144C</li>
+    <li>Memoria estática de 512Kb, AS7C34096A-10TIN</li>
+    <li>Oscilador de 50MHz</li>
+    <li>Circuito EAR de Superfo (1 transistor)</li>
+    <li>Circuito de vídeo basado en AD724 con cristales de 4.43MHz/3.58Mhz</li>
+    <li>Conector PS/2 para teclado</li>
+    <li>Conector RCA para video compuesto</li>
+    <li>Conector Jack para audio Stereo</li>
+    <li>Conector Jack para EAR</li>
+    <li>Conectores Molex 1.25mm para JTAG y RGB</li>
+    <li>Zócalo para Tarjetas SD</li>
+    <li>Puerto de expansión en 3 tiras de pines hembra</li>
+    <li>Conector alimentación micro-USB</li>
+    <li>Tamaño PCB: 86x56 mm. (Compatible con cajas Raspberry Pi)</li></ul>
+  <br/>
+  <strong>Listado de Componentes:</strong>
+  <br/>
+  <pre style="font-size:14px">
+<span style="text-decoration:underline">Cant. Referencia  Descripción</span>
+  1   U1          FPGA XC6SLX9-2TQG144C
+  1   U2          SPI Flash Winbond W25Q32BV
+  1   U3          SRAM AS7C34096A-10TIN
+  1   U4          Analog Devices AD724
+  1   U5          Oscilator 50MHz 5*7
+  1   U6          SOT223 ZLDO1117 3.3V Regulator
+  1   U7          SOT223 ZLDO1117 1.2V Regulator
+  1   J1          Micro USB socket
+  1   J2          SD/MMC socket
+  1   J3          RCA socket
+  2   J4, J5      3.5mm audio socket
+  1   J6          DB9 right angle male (Joystick connector)
+  1   J7          PS/2 socket
+  1   J8          9 pin molex connector 1.25mm right angle male (RGB)
+  1   J9          6 pin molex connector 1.25mm straight male (JTAG)
+  3   J10-J12     12 pin female header single row
+  3   J13-J15     2 pin male header single row
+  3   D1-D3       SMD Diode 1N4148, SOD-523
+  2   D4-D5       SMD 0805 LEDs (red and green)
+  1   T1          BC846 SOT-23 NPN Transistor
+  2   Y1-Y2       HC-49UP SMD Crystals (3.58M/4.43M)
+  3   L1-L3       SMD 0805 magnetic bead 1k 3A
+  4   R1-R4       75 Ohm 0805 Resistor
+ 11   R5-R15      510 Ohm 0805 Resistor
+  3   R16-R18     1K Ohm 0805 Resistor
+  6   R19-R24     2K Ohm 0805 Resistor
+  8   R25-R32     10K Ohm 0805 Resistor
+  1   C1          4.3pF 0805 Capacitor
+  3   C2-C4       10nF 0805 Capacitor
+ 23   C5-C27      100nF 0603 Capacitor
+  8   C28-C35     4.7uF 0805 Capacitor
+  1   C36         220uF CPOL-0605 Capacitor
+</pre>
+
+  <a name="software"></a>
+  <div style="background-color:#084;height:4px;margin-top:70px;width:99.5%;clear:left"></div>
+  <strong style="font-size:20px">Software</strong>
+  <div style="clear:left"></div>
+  <div style="width:40%;float:left;padding-left:10%">
+    <img alt="Imagen" style="width:80%" src="https://lh3.googleusercontent.com/-qD_EWI6I6Ds/VZ1-tMD7ZOI/AAAAAAAAAp0/0CKEhtdSpw8/s220/Tape_Cassette_WIP_D.png"/></div>
+  <div style="width:50%;float:left">
+    <strong><span style="color:#084">Firmware</span></strong><i>...y otras utilidades</i>
+    <br/>
+    <br/>
+    Todo el software, firmware y bitstreams disponibles para cargar
+    en la FPGA se encuentran en el repositorio de McLeod.
+    <br/>
+    <br/>
+    <a href="http://guest:zxuno@www.atc.us.es/svn/zxuno/">http://www.atc.us.es/svn/zxuno/</a>
+    <br/>
+    <br/>
+    <pre>
+Usuario:    guest
+Contraseña: zxuno</pre>
+    <br/></div>
+
+  <div style="background-color:#084;height:4px;margin-top:200px;width:99.5%;clear:left"></div>
+  <div style="clear:left;margin:20px;"></div>
+  <div style="width:35%;float:left;padding-left:15%">
+    <img alt="Imagen" src="http://zxuno.speccy.org/imagen/zx1rompack.png"/></div>
+  <div style="width:50%;float:left">
+    <strong><span style="color:#084">ZX1ROMPACK</span></strong>
+    <i>Creador / Editor de ROMS.ZX1</i>
+    <br/>
+    <br/>
+    <ul>
+      <li>Utilidad para poder editar y crear ficheros con ROM's para el ZX-Uno.</li>
+      <li><a href="http://www.zxuno.com/forum/viewtopic.php?f=39&t=443">Enlace al foro con explicaciones acerca de su funcionamiento.</a></li></ul>
+    <br/>
+    <a href="http://guest:zxuno@www.atc.us.es/svn/zxuno/software/ZX1RomPack/">http://www.atc.us.es/svn/zxuno/software/ZX1RomPack//</a>
+    <br/>
+    <br/>
+    <i>Desarrollado por Quest</i>
+    <br/>
+    <br/></div>
+
+  <div style="background-color:#084;height:4px;margin-top:200px;width:99.5%;clear:left"></div>
+  <div style="clear:left;margin:20px;"></div>
+  <div style="width:35%;float:left;padding-left:15%">
+    <img alt="Imagen" src="https://lh3.googleusercontent.com/-9UcJoy8DmuY/VZ2SHbaZ-gI/AAAAAAAAAqY/uzay3zETzC4/s160/zesarux.png"/></div>
+  <div style="width:50%;float:left">
+    <strong><span style="color:#084">ZEsarUX v4.0</span></strong> <i>Emulador Oficial ZX-Uno</i>
+    <br/>
+    <br/>
+    <ul>
+      <li>Emulador multiplataforma de sistemas Sinclair</li>
+      <li>Máquinas: ZX Spectrum, <strong><span style="color:#084">ZX-Uno</span></strong>, ZX80, ZX81, Z88</li></ul>
+    <br/>
+    <a href="http://sourceforge.net/projects/zesarux/">http://sourceforge.net/projects/zesarux/</a>
+    <br/>
+    <br/>
+    <i>Desarrollado por César Hernández Bañó</i>
+    <br/>
+    <br/>
+    <a href="http://www.youtube.com/user/chernandezba/videos">Vídeos del canal youtube de César</a>
+    <br/>
+    <br/></div>
+
+  <div style="background-color:#084;height:4px;margin-top:200px;width:99.5%;clear:left"></div>
+  <div style="clear:left;margin:20px;"></div>
+  <div style="width:35%;float:left;padding-left:15%">
+    <img alt="Imagen" align=center src="imagen/logo_radastan_001.png"/></div>
+  <div style="width:50%;float:left">
+    <strong><span style="color:#084">SDK Radastan </span></strong> <i>para ZX Spectrum / ZX-Uno</i>
+    <br/><br/>
+    <ul>
+      <li>Basado en el compilador Z88DK, el kit permite desarrollar juegos y aplicaciones en lenguaje C.</li>
+      <li>Compatible con modo gráfico estandard ZX-Spectrum.</li>
+      <li>Funciones básicas <i>(0.3 beta)</i> específicas para el Modo Radastaniano.</li></ul>
+    <br/>
+    <i>Enlaces: </i>
+    <ul>
+      <li><a href="http://www.bytemaniacos.com/ficheros/zxspectrum/cursoz88dk.zip">SDK "Original" ZX-Spectrum.</a></li>
+      <li><strong>NUEVO! </strong><a href="http://zxuno.speccy.org/ficheros/ZX_Uno_kit_03c.zip">SDK Modo Radastaniano<i> (0.3 beta)</i>. </a></li>
+      <li><a href="http://www.bytemaniacos.com/ficheros/zxspectrum/">Tutorial original Radastan (ZIP+PDF).</a></li>
+      <li><a href="http://www.zonadepruebas.com/viewtopic.php?f=26&t=6302">Foro Zona de Pruebas Modo Radastaniano.</a></li>
+      <li><a href="http://www.mojontwins.com/mojoniaplus/">Foro Mojon Twins.</a></li>
+      <li><a href="http://www.bytemaniacos.com/ficheros/zxspectrum/z88dk10.zip">Z88DK10.ZIP.</a></li></ul>
+    <br/>
+    <br/></div>
+
+  <a name="enlaces"></a>
+  <div style="background-color:#05a;height:4px;margin-top:70px;width:99.5%;clear:left"></div>
+  <strong style="font-size:20px">Enlaces</strong>
+  <div style="clear:left;margin:20px;"></div>
+<br/>
+  <strong>Wiki Técnico:</strong>
+  <ul>
+    <li><a href="http://www.zxuno.com/wiki">http://www.zxuno.com/wiki</a></li></ul>
+  <br/>
+
+  <strong>Foros de discursión (zonadepruebas.com):</strong>
+  <ul>
+    <li><a href="http://zxuno.com/forum/viewtopic.php?f=27&t=17">Todos los enlaces</a></li></ul>
+  <br/>
+
+  <strong>Cuenta Twitter del proyecto:</strong>
+  <ul>
+    <li><a href="https://twitter.com/zxuno">https://twitter.com/zxuno</a></li></ul>
+  <br/>
+
+  <strong>Relacionados Hardware / FPGA:</strong>
+  <ul>
+    <li><a href="http://www.retrolandia.net">Retrolandia</a></li>
+    <li><a href="http://www.zxprojects.com/">ZX Projects</a></li>
+    <li><a href="http://www.xilinx.com">Xilinx</a></li>
+    <li><a href="http://www.raspberrypi.org">Raspberry Pi</a></li></ul>
+  <br/>
+
+  <strong>ZX Spectrum:</strong>
+  <ul>
+    <li><a href="http://www.speccy.org">Speccy.org</a></li>
+    <li><a href="http://www.mojontwins.com/">Mojon Twins Dome</a></li>
+    <li><a href="http://www.worldofspectrum.org">World of Spectrum</a></li>
+    <li><a href="http://cheveron.github.io/sebasic4/">SE Basic IV Buffy</a></li>
+    <li><a href="http://www.speccy.org">Speccy.org</a></li>
+    <li><a href="http://www.zxspectrum.es">www.zxspectrum.es</a></li></ul>
+  <br/>
+
+  <strong>Otros:</strong>
+  <ul>
+    <li><a href="http://www.retroentreamigos.com/">Podcast Retro entre Amigos</a></li>
+    <li><a href="http://retromaniacmagazine.blogspot.com.es/">RetroManiac Magazine</a></li>
+    <li><a href="http://www.retro-sevilla.com/">Retro Sevilla</a></li></ul>
+  <br/>
+
+  <strong>Dónde comprar ZX-Uno y accesorios: (enlaces ajenos a la Asociación)</strong>
+  <ul>
+    <li>Enlaces de venta de Antonio Villena (envío a España, para fuera de España pinchar <a href="maquina_e.shtml#enlaces">aquí</a>):</li>
+    <ul>
+      <li><a href="http://www.zxuno.com/forum/viewtopic.php?f=27&t=444">Placa ZX-Uno v4.2</a></li>
+      <li><a href="http://www.zxuno.com/forum/viewtopic.php?f=25&t=380">Carcasa modificada Raspberry</a></li>
+      <li><a href="http://www.zxuno.com/forum/viewtopic.php?f=25&t=332">Cable VGA y Scart</a></li></ul>
+    <li>Enlace de venta de carmeloco (venta a España):</li>
+    <ul>
+      <li><a href="http://www.va-de-retro.com/foros/viewtopic.php?f=50&t=5212">Placa ZX-Uno v4.1</a></li></ul></ul>
+  <br/>
+
+  <strong>Proyectos derivados del ZX-Uno</strong>
+  <ul><li><a href="http://www.zxuno.com/forum/viewtopic.php?f=27&t=1253">Placa ZX-Uno VGA 2M por ManuFerHi</a></li>
+      <li><a href="http://www.8bits4ever.com/zx-uno-m.html">Placa ZX-Uno-M por 8bits4ever</a></li></ul>
+  <br/>
+
+  <span style="font-size:12px">
+    * Si programas para ZX Spectrum y quieres ver tu página aquí, ponte en contacto
+    con nosotros.</span></div>
+<div id="footer">
+  <div id="footerimg" style="background:0 90px url(imagen/logo.png)"></div>
+  <div id="footerhost"><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode"><img src="imagen/CC-BY-SA.png"/></a> Site hospedado en <a href="http://www.speccy.org">Speccy.org</a>. Síguenos en twitter <a href="http://twitter.com/zxuno"><img src="imagen/twitter_icon.png"/></div></div></body></html>

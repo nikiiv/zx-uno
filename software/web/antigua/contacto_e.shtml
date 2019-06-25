@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="favicon.png"/>
+  <link rel="stylesheet" href="home.css"/>
+  <title>ZX-Uno [ZX Spectrum Computer Clone Based on FPGA]</title>
+</head>
+<body>
+<div id="logo" style="background:url(imagen/logo_e.png)"></div>
+<div id="menu" style="width:620px">
+  <a href="index_e.shtml"    style="width:52px">Home</a>
+  <span>·</span>
+  <a href="http://zxuno.com/forum" target="_blank" style="width:55px">Forum</a>
+  <span>·</span>
+  <a href="maquina_e.shtml"  style="width:102px">The Machine</a>
+  <span>·</span>
+  <a href="descarga_e.shtml" style="width:81px">Download</a>
+  <span>·</span>
+  <a href="media_e.shtml"    style="width:52px">Media</a>
+  <span>·</span>
+  <a href="faq_e.shtml"      style="width:45px">FAQ</a>
+  <span>·</span>
+  <span                      style="width:65px">Contact</span>
+  <span>·</span>
+  <a href="contacto.shtml"   style="width:63px">[Spanish]</a></div>
+<div id="main">
+  <strong>Contact form:</strong>
+  <br/>
+  <br/>
+  <span style="font-size:14px;font-weight:bold;color:#f00">Actually we don't sell or reserve the ZX-Uno. We won't reply any of these questions</span>
+  <br/>
+  <br/>
+  <div style="padding:20px 20px;background:#F0F0F0;font-size:10px;font-weight:bold">
+    <form method="post" action="contacto.php?lang=en">
+      <input type="text" name="author" id="author" size="22" tabindex="1"/>
+      <label for="author">Name</label>
+      <br/>
+      <br/>
+      <input type="text" name="email" id="email" size="22" tabindex="2"/>
+      <label for="email">E-mail</label>
+      <br/>
+      <br/>
+      <input type="text" name="asunto" id="asunto" size="22" tabindex="3"/>
+      <label for="asunto">Subject</label>
+      <br/>
+      <br/>
+      <label for="comment">Message</label>
+      <textarea name="comment" id="comment" style="width:100%" rows="10" tabindex="4"></textarea>
+      <br/>
+      <br/>
+      <input type="submit" value="Enviar" tabindex="5"/></form></div>
+  <br/>
+  <span style="font-size:12px">* Before send a message, please verify if your question
+    is solved in the <a href="faq_e.shtml">FAQ</a> or 
+    <a href="http://zxuno.com/forum">forum</a>, where
+    we discuss about the project.
+    <br/>
+    <br/>
+    Of course, we don't accept any type of spam and requests about software for ZX Spectrum,
+    ROMs, material with copyright, etc.</span></div>
+<div id="footer">
+  <div id="footerimg" style="background:0 90px url(imagen/logo_e.png)"></div>
+  <div id="footerhost"><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode"><img src="imagen/CC-BY-SA.png"/></a> Site hosted on <a href="http://www.speccy.org">Speccy.org</a>. Follow us on twitter <a href="http://twitter.com/zxuno"><img src="imagen/twitter_icon.png"/></div></div></body></html>

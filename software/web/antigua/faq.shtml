@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="favicon.png"/>
+  <link rel="stylesheet" href="home.css"/>
+  <title>ZX-Uno [Clon de ordenador ZX Spectrum basado en FPGA]</title>
+</head>
+<body>
+<div id="logo" style="background:url(imagen/logo.png)"></div>
+<div id="menu">
+  <a href="index.shtml"    style="width:50px">Inicio</a>
+  <span>·</span>
+  <a href="http://zxuno.com/forum" target="_blank" style="width:40px">Foro</a>
+  <span>·</span>
+  <a href="maquina.shtml"  style="width:95px">La Máquina</a>
+  <span>·</span>
+  <a href="descarga.shtml" style="width:78px">Descarga</a>
+  <span>·</span>
+  <a href="media.shtml"    style="width:52px">Media</a>
+  <span>·</span>
+  <span                    style="width:45px">FAQ</span>
+  <span>·</span>
+  <a href="contacto.shtml" style="width:75px">Contacto</a>
+  <span>·</span>
+  <a href="faq_e.shtml"    style="width:62px">[English]</a></div>
+<div id="main">
+  <strong>Preguntas y respuestas frecuentes:</strong>
+  <br/>
+  <br/>
+  <ol>
+    <li>
+      <strong>¿Qué es ZX-Uno?</strong>
+      <br/>
+      Básicamente se trata de una placa con una FPGA programada para trabajar como un
+      ordenador ZX Spectrum, del mismo tamaño que Raspberry Pi. También están en desarrollo otras máquinas de 8 bits para funcionar bajo el mismo hardware.</li>
+    <br/>
+    <li>
+      <strong>¿Qué máquinas caben en la FPGA?</strong>
+      <br/>
+      En principio está pensado para toda la gama ZX Spectrum, y capacidades extra como la ULAPlus, TurboSound, etc, aunque también se le
+      podrán instalar máquinas similares. Sólo caben máquinas de 8 bits con un tamaño
+      máximo de 512K entre ROM y RAM, y que la circuitería a sintetizar sea relativamente
+      sencilla. El <em>corazón</em> del aparato es
+      una FPGA Xilinx Spartan XC6SLX9, que es una FPGA relativamente modesta, aunque suficiente para implementar unas cuantas máquinas de 8 bits. Emplear una FPGA más
+      <em>grande</em> supondría poder sintetizar aún más máquinas aparte del ZX Spectrum y otras comentadas más adelante en este FAQ, pero
+      también encarecería el precio considerablemente.</li>
+    <br/>
+    <li>
+      <strong>¿Qué conectores incluye?</strong>
+      <br/>
+      La placa base está pensada para poder usar las mismas cajas de Raspberry Pi, los
+      conectores siguen la misma disposición  y son los siguientes:
+      <ul>
+        <li><strong>Vídeo:</strong> Vídeo compuesto por conector RCA, compatible con caja RPi</li>
+        <li><strong>Audio:</strong> Audio estéreo por conector jack 3.5mm, compatible con caja RPi</li>
+        <li><strong>Teclado:</strong> Conector PS/2 en el lugar que ocupa el cable Ethernet de la caja</li>
+        <li><strong>Alimentación:</strong> 5 voltios regulados que entran por un conector micro-USB, compatible con caja RPi</li>
+        <li><strong>Joystick:</strong> Conector DB9 norma Atari, en el lugar que ocupan los puertos USB de la caja</li>
+        <li><strong>Almacenamiento:</strong> Tarjeta SD, compatible con caja RPi</li>
+        <li><strong>Carga en cinta:</strong> Conector jack 3.5mm al lado del audio, no compatible con caja RPi, hay que taladrarlo</li>
+        <li><strong>Expansión:</strong> 3 tiras de pines de 15 cada una en la misma ubicación que la Raspberry Pi, tampoco va a ningún agujero de la caja</li>
+        <li><strong>RGB y VGA:</strong> Conector Molex de 9 pines para usar con cable específico. Ocupa la posición del puerto HDMI de una RPi</li>
+        <li><strong>Cable JTAG:</strong> Conector Molex de 6 pines, interno, para reprogramación de la placa.</li></ul></li>
+    <br/>
+    <li>
+      <strong>¿Por qué no tiene conector de expansión como el de un ZX Spectrum?</strong>
+      <br/>
+      Bueno, todavía no lo tiene... ;) Básicamente existe una incompatibilidad eléctrica, la FPGA trabaja a 3.3V y las señales del
+      conector de expansión van a 5V. De todas formas hay un
+      conector de expansión genérico del que salen 40 pines de la FPGA, por lo que mediante
+      una placa externa que contenga el conector EDGE y los conversores de voltaje puede hacerse, y de hecho se está estudiando.</li>
+    <br/>
+    <li>
+      <strong>¿Sería muy complejo añadir soporte USB (teclados/joystick)? Por una parte, ya no
+      es tan fácil comprar teclados PS/2 nuevos; por otra parte dos joysticks son mejor que uno.</strong>
+      <br/>
+      Sí, sería muy complejo y creo que además funciona a otros voltajes. Si alguien consigue
+      implementarlo por el puerto de expansión no habría problema en sustituir el conector
+      PS/2 por uno USB, pero sería para una revisión futura de la placa. Por ahora nos
+      tenemos que conformar con PS/2. No obstante todavía se venden muchos teclados PS/2 nuevos en conocidas tiendas online como Amazon o TC.</li>
+    <br/>
+    <li>
+      <strong>¿Necesito algún cable especial?</strong>
+      <br/>
+      Para el prototipo sí, el Xilinx Platform Cable. En la versión definitiva no hace
+      falta porque daremos la posibilidad de actualizar el firmware vía SD. El resto de
+      cables son genéricos: la alimentación es micro-USB, el video es RCA y el audio/EAR
+      son jacks de 3.5mm. El único cable personalizado (como pasa con todas las máquinas)
+      es el RGB/Scart y VGA, aunque la calidad que da el AD724 para el
+      video compuesto es excelente.</li>
+    <br/>
+    <li>
+      <strong>¿Cómo se usará la tarjeta SD en el core de ZX Spectrum? ¿Permitirá TZX o sólo TAP básicos?</strong>
+      <br/>
+      TZX es un formato de audio compacto. Sólo puede usarse con el puerto EAR. Los sistemas
+      que has visto que soportan TZX (ResiDOS, por ejemplo) realmente lo que hacen es
+      soportar un subconjunto del TZX que es esencialmente un TAP. TAP sí que es un formato
+      que permite cargas desde memoria masiva. El ZX-UNO usa divMMC con la ROM de ESXDOS, la cual soporta TAP, SNA y Z80 entre otros como imágenes de disco TRD.</li>
+    <br/>
+    <li>
+      <strong>¿Se podrá escribir en las cintas/discos? ¿TRD ó DSK?</strong>
+      <br/>
+      Como esto no es emulación, lo que se puede hacer o no con ficheros del tipo que sea depende
+      del S.O. que pongas en el ZX Spectrum. ACtualmente usamos ESXDOS como SO. ESXDOS permite grabar a un .TAP con el comando .TAPEOUT.
+      Asimismo, ESXDOS permite leer y escribir en imágenes de disco formato TRD.<br>
+      <br>
+      Respecto al formato DSK: si algún S.O. lo soporta, entonces sí, pero si no,
+      no. En los emuladores se soporta DSK o TRD porque se emula el hardware de la disquetera.
+      Aquí se podría implementar algo por el estilo pero probablemente no cabría en la FPGA.
+      Para que te hagas una idea, dar soporte de DSK de forma transparente (sin usar
+      un S.O. especial que sea quien se encargue de ello) implicaría  implementar un chip que tenga la misma interfaz que el uPD765, un sistema que &quot;simule&quot; tener una disquetera a la que &quot;conectarle la imagen DSK e interactuar con la SD por medio de algún menú, implementar rutinas para leer sistemas de ficheros FAT, etc. <br>
+    <br>
+    </li>
+    <li><strong>¿Cabrán los <em>clones rusos</em>? ¿Y el SAM coupé?
+      ¿Y otras máquinas?</strong><br/>
+      Muy probablemente sí. Respecto al SAM, de hecho actualmente ya está parcialmente implementado. Salvo por algún detalle de timings en el Z80, es funcional y se puede cargar software vía puerto EAR por audio. Además
+      cabrá el ZX80, ZX81, Jupiter ACE (que también está ya implementado), y algunos arcades que usan un solo Z80, como el Pacman.<br>
+      <br>
+      Con la actual FPGA (Xilinx Spartan-6) más grande que la usada en el primer prototipo (v1) hemos podido portar cores de otras máquinas. Ahora mismo están en desarrollo, y algunas ya funcionales parcial o totalmente, 
+    estas máquinas, además del propio Spectrum: Sam Coupé, Jupiter ACE, Sega Master System, Acorn Atom, Oric Atmos, VIC-20, Apple II, arcade lady bug.<br>
+    <br>
+    </li>
+    <li><strong>¿Cuantos cambios de configuración se permiten en ese chip? Es decir, ¿se podría
+        cambiar de configuración alegremente o mejor dejarla fija para siempre?</strong>
+      <br/>
+      Tantos como escrituras permita la SPI Flash, creo que miles o cientos de miles. Eso sí,
+      si no tienes el cable Xilinx (como la mayoría de la gente) procura que las
+      configuraciones que le instales sean autoactualizables, sino tendrás que enviar la
+      placa a reflashear.<br>
+      <br>
+    </li>
+    <li><strong>Me he comprado el prototipo pero no sé como se sueldan los componentes
+        SMD, ¿alguna ayuda?</strong>
+      <br/>
+      McLeod nos da una buena explicación en el
+      <a href="http://zonadepruebas.com/viewtopic.php?f=26&t=4073&start=60#p29455">
+      Foro Zona de Pruebas.</a><br>
+      <br>
+    </li>
+    <li><strong>¿Cuánto costará?</strong>
+      <br/>
+      <strike>Tampoco me gusta dar precios pero espero que la placa montada con los conectores sin
+        soldar salga por menos de 30 euros. El prototipo es más barato porque viene sin montar.
+        Por mi parte no voy a incrementar el coste de lo que me cobre seeedstudio para los
+        prototipos. Para la versión final, si la distribución se le encarga a otra persona, no
+        puedo descartar que haya algún beneficio, sobre todo porque conllevará un trabajo
+        adicional: soldar conectores, grabar firmware, testear la placa, empaquetado, etc...<br>
+      <br>
+      </strike><strong>Actualización 2016</strong>: <br/>
+      Para Marzo de 2016 iniciamos la campaña de crowfunding. El precio de
+      venta fue de 65 euros incluyendo gastos de envío. Hemos hecho todo lo posible
+      para mantener el precio bajo. <br>
+    <br>
+    </li>
+    <li><strong>¿Quiénes trabajan en el proyecto?</strong>
+      <br/>
+      Somos 5 personas.
+      <ul>
+        <li><strong>McLeod.</strong> Diseño de cores principales, también colabora en hardware.</li>
+        <li><strong>superfo.</strong> Ruteador, el que se encarga de diseñar la PCB.</li>
+        <li><strong>antoniovillena.</strong> Idea inicial, diseño de esquemas, programación firmware y distribución de prototipos.</li>
+        <li><strong>Quest.</strong> Diseño de cores secundarios (ports), colabora en firmware, en prototipos y en web.</li>
+        <li><strong>Hark0.</strong> Diseño gráfico y web. Todo la parte relativa al grafismo del proyecto.<br>
+          <br>
+        </li></ul></li>
+    <li><strong>¿Qué licencia tiene?</strong>
+      Creative Commons Share Alike (Compartir Igual), que se resume en:
+      <br/>
+      <br/>
+      Usted es libre de:
+      <ul>
+      <strong>Compartir</strong> — copiar y redistribuir el material en cualquier medio o formato
+      <br/>
+      <strong>Adaptar</strong> — remezclar, transformar y crear a partir del material
+      <br/>
+      para cualquier finalidad, incluso comercial.
+      <br/>
+      El licenciador no puede revocar estas libertades mientras cumpla con los <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.es_ES">términos de la licencia</a>.
+      <br/>
+      <br/>
+      </ul>
+      Bajo las condiciones siguientes:
+      <ul>
+      <strong>Reconocimiento</strong> — Debe reconocer adecuadamente la autoría, proporcionar un enlace a la licencia e indicar si se han realizado cambios. Puede hacerlo de cualquier manera razonable, pero no de una manera que sugiera que tiene el apoyo del licenciador o lo recibe por el uso que hace.
+      <br/>
+      <br/>
+      <strong>CompartirIgual</strong> — Si remezcla, transforma o crea a partir del material, deberá difundir sus contribuciones bajo la misma licencia que el original.
+      <br/>
+      <br/>
+      No hay restricciones adicionales — No puede aplicar términos legales o medidas tecnológicas que legalmente restrinjan realizar aquello que la licencia permite.
+      <br/>
+      <br/>
+      </ul>
+      Avisos:
+      <ul>
+      No tiene que cumplir con la licencia para aquellos elementos del material en el dominio público o cuando su utilización esté permitida por la aplicación de una excepción o un límite.
+      <br/>
+      <br/>
+      No se dan garantías. La licencia puede no ofrecer todos los permisos necesarios para la utilización prevista. Por ejemplo, otros derechos como los de publicidad, privacidad, o los derechos morales pueden limitar el uso del material.
+      </ul>
+      <br/>
+    </li>
+    <li><strong>Actualización Mar. 2016</strong>:
+      <br/>
+      Hemos superado el crowdfunding con éxito gracias al apoyo de todos los colaboradores.
+      Nuestro plan es repartir los 250 ZX-Unos en septiembre, aunque haremos lo posible para
+      que sea antes. A partir de ese momento confiamos en que haya iniciativas comerciales
+      que lo vendan a un precio asequible. Sólo pedimos que lo hagan respetando los
+      términos de la licencia: que mencionen que es un proyecto con licencia CC by-SA, con
+      el nombre o nick de los autores y la web del proyecto <a href="http://zxuno.com">zxuno.com</a>.
+    <br>
+    <br>
+    </li>
+  </ol>
+  <p>&nbsp;</p>
+<br/>
+</div>
+<div id="footer">
+  <div id="footerimg" style="background:0 90px url(imagen/logo.png)"></div>
+  <div id="footerhost"><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode"><img src="imagen/CC-BY-SA.png"/></a> Site hospedado en <a href="http://www.speccy.org">Speccy.org</a>. Síguenos en twitter <a href="http://twitter.com/zxuno"><img src="imagen/twitter_icon.png"/></div></div></body></html>

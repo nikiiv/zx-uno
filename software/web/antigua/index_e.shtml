@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="favicon.png"/>
+  <link rel="stylesheet" href="home.css"/>
+  <title>ZX-Uno [ZX Spectrum Computer Clone Based on FPGA]</title>
+</head>
+<body>
+<div id="logo" style="background:url(imagen/logo_e.png)"></div>
+<div id="menu" style="width:620px">
+  <span                      style="width:52px">Home</span>
+  <span>·</span>
+  <a href="http://zxuno.com/forum" target="_blank" style="width:55px">Forum</a>
+  <span>·</span>
+  <a href="maquina_e.shtml"  style="width:102px">The Machine</a>
+  <span>·</span>
+  <a href="descarga_e.shtml" style="width:81px">Download</a>
+  <span>·</span>
+  <a href="media_e.shtml"    style="width:52px">Media</a>
+  <span>·</span>
+  <a href="faq_e.shtml"      style="width:45px">FAQ</a>
+  <span>·</span>
+  <a href="contacto_e.shtml" style="width:65px">Contact</a>
+  <span>·</span>
+  <a href="index.shtml"      style="width:63px">[Spanish]</a></div>
+<div id="main">
+  <img width="100%" src="imagen/foto1.jpg"/>
+  <br><br>
+  <strong>News (F5 to update)</strong>
+  <ul>
+    <li><strong>2016-10-18 Added video RetroCod 2016 talk. <a href="media_e.shtml#videos">Media</a>.</strong><br></li>
+    <li><strong>2016-10-18 Added link to El Mundo del Spectrum Podcast. <a href="media_e.shtml#otros">Media</a>.</strong><br></li>
+    <li><strong>2016-10-18 Added link to FAQ + Manual V2 by Uto. <a href="descarga_e.shtml#software">Downloads</a>.</strong><br></li>
+    <li>2016-09-02 Updated file ZX-UNO Board 4.1 Scheme Pin-Out. <a href="descarga_e.shtml#software">Downloads</a>.<br></li>
+    <li>2016-08-25 Updated SDK Radastanian Mode (v0.3 beta) - Developed by @Radastan. <a href="maquina_e.shtml#software">Software</a>.<br></li>
+    <li>2016-06-10 Added Sketch-Up ZX-Uno (v4.1) SKP file format - Development by @Mejias3D. <a href="descarga_e.shtml">Downloads</a>.<br></li>
+    <li>2016-05-31 Transparent box for ZX-Uno 4.1 - Design by @Arananet. <a href="descarga_e.shtml">Downloads</a>. <a href="media_e.shtml">Media</a>.<br></li>
+    <li>2016-05-25 Added snapshots in high resolution 3D PCB Sketch-Up. <a href="media_e.shtml">Media</a>.<br></li>
+    <li>2016-05-18 Added snapshots of 3D PCB Sketch-Up by Mejias3D. <a href="media_e.shtml">Media</a>.<br></li>
+    <li>2016-05-18 Updated file PDF Pin Out in section <a href="descarga_e.shtml">Downloads</a>.<br></li>
+    <li>2016-03-23 Added Video Demo Sam Coupé <a href="media_e.shtml">Media</a> section.</li>
+    <li>2016-03-19 Link to <a href="http://www.verkami.com/projects/14074-zx-uno" target="_BLANK">Verkami</a> with information about our crowdfunding campaign (closed).</li>
+    <li>2016-03-08 Updated links of  ZEsarUX and Pinout Scheme.</li>
+    <li>2016-02-17 Added PDF Pinout FPGA-PCB Zx-Uno v4.1. <a href="descarga_e.shtml">Downloads</a></li>
+    <li>2016-02-15 Spanish video interview to McLeod_Ideafix and Antonio Villena at RetroSevilla 2015. <a href="media_e.shtml">Media</a></li>
+    <li>2016-02-11 Pictures ZX-Uno board v 4.1. <a href="media_e.shtml">Media</a></li>
+    <li>2016-02-08 ZX-Uno pre-campaign crowfunding survey closed !!!  Thanks for participate!!!</li>	
+    <li>2016-02-03 ZX-Uno pre-campaign crowfunding survey opened!!!!</li>
+    <li>2015-11-18 Web updated, added Radastan's SDK. <a href="maquina_e.shtml#software">The Machine / Software</a></li>
+    <li>2015-10-09 Web updated, added new <a href="http://zxuno.com/forum" target="_blank" style="width:55px">Forum</a></li>
+    <li>2015-09-15 @Quest joins ZX-Uno team</li>
+    <li>2015-07-10 Presenting ZEsarUX: Official ZX-Uno Emulator. <a href="maquina_e.shtml#software">Software</a></li>
+    <li>2015-07-08 Pictures ZX-Uno case by @Mejias3D. <a href="media.shtml">Media</a></li>
+    <li>2015-07-08 Pictures ZX-Uno Engendro by @Celestinox. <a href="media.shtml">Media</a></li>
+    <li>2015-07-08 Redesign Media section with new material. <a href="media_e.shtml">Media</a></li>
+    <li>2015-04-17 Stickers for keyboard "Layout MJ" (@Mejias3D). <a href="media_e.shtml">Media</a></li>
+    <li>2015-04-16 Printed object 3D JOY-KEY (@Mejias3D) for keyboard. <a href="media_e.shtml">Media</a></li>
+    <li>2015-04-15 Updated file PDF - Stickers for Keyboard. <a href="descarga_e.shtml">Download</a></li>
+    <li>2015-04-08 ZX-Uno playing videos with PLAYZXM (@Celestinox). <a href="media_e.shtml">Media</a></li>
+    <li>2015-01-13 First ZX-Uno clone working (@Celestinox). <a href="media_e.shtml">Media</a></li>
+    <li>2014-12-05 Video of prototype v2 running (@yombo). <a href="media_e.shtml">Media</a></li>
+    <li>2014-11-28 First pictures of PCB prototype v2. Pictures at <a href="media_e.shtml">Media</a></li>
+    <li>2014-11-27 Scheme design prototype 2. PDF avaliable at <a href="descarga_e.shtml">Download</a></li>
+    <li>2014-10-20 Photos of printed 3D test case (model by @Jepalza). <a href="media_e.shtml">Media</a></li>
+    <li>2014-10-15 New schematic and PCB design prototype 2. Schemes at <a href="media_e.shtml">Media</a></li>
+    <li>2014-07-24 Added PDF file of stickers for the keyboard. <a href="descarga_e.shtml">Download</a></li>
+    <li>2014-07-22 Added pictures of keyboards with stickers. <a href="media_e.shtml">Media</a></li>
+    <li>2014-07-16 Added links to Retro entre Amigos Podcast (Spanish). <a href="media_e.shtml">Media</a></li>
+    <li>2014-07-15 Added link to RetroManiac Magazine interview (Spanish). <a href="media_e.shtml">Media</a></li>
+    <li>2014-04-23 Added provisional keyboard layouts. <a href="descarga_e.shtml">Download</a></li>
+    <li>2014-02-11 New PCB mounting test!!!. Picture at <a href="media_e.shtml">Media</a></li>
+    <li>2013-12-25 First PCB mounting test. Picture at <a href="media_e.shtml">Media</a></li>
+    <li>2013-10-22 PCBs arrived, new photos uploaded in <a href="media_e.shtml">Media</a></li>
+    <li>2013-10-10 Website launch</li>
+    <li>2013-09-21 Order of 10 prototypes: boards and components</li></ul></div>
+<div id="footer">
+  <div id="footerimg" style="background:0 90px url(imagen/logo_e.png)"></div>
+  <div id="footerhost"><a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode"><img src="imagen/CC-BY-SA.png"/></a> Site hosted on <a href="http://www.speccy.org">Speccy.org</a>. Follow us on twitter <a href="http://twitter.com/zxuno"><img src="imagen/twitter_icon.png"/></div></div></body></html>
